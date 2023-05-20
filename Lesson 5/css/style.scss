@@ -1,0 +1,14 @@
+@import "./font";
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: rgb(17, 17, 17);
+  font-family: "Manrope", sans-serif;
+}
