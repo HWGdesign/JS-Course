@@ -1,12 +1,25 @@
-console.log('ok');
+let userName = "Adam";
+console.log(typeof userName);
+console.log(typeof '222');
+console.log(typeof 222);
+console.log(typeof 2>2);
+console.log(typeof true);
+console.log(typeof undefined);
 
-let result = 2 + 2;
-console.log(result);
+console.log(typeof {});
+console.log(typeof function(){ });
+console.log(typeof []);
 
-let resultTwo = 'aaa';
-console.log(resultTwo);
 
-const usersPoints = [1,2,3,4];
-let points = 10;
+let primitiveType = 20;
+let primitiveTypeSecond = primitiveType;
+primitiveType = 30;
+console.log(primitiveTypeSecond);
 
-console.log(usersPoints);
+let referenceValueFirst = [1,2,3];
+let referenceValueSecond = referenceValueFirst;
+console.log(referenceValueSecond);
+
+referenceValueFirst[3] = 'elo';
+console.log(referenceValueFirst); 
+
