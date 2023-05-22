@@ -86,3 +86,52 @@ for (let i = 0; i < guest.length; i++){
      }else
           console.log(`${guest[i]}, You're not on a list.`);
      }
+
+console.log('');
+
+const colors = ['red', 'green', 'blue', 'gold'] //WE ASSIGNED color TO EVERY ARRAY INDEX
+
+for (const color of colors) {
+     console.log(`my favorite color is ${color}`);
+}
+
+console.log('');
+
+//EXERCISE 
+
+//1
+
+let sum = 0;
+
+for(let i = 1; i <= 100; i++){
+     if(i % 2 === 0){
+          sum += i; //EVERY TIME WE ADD VALUE TO EACH OTHER 
+     }
+}
+
+console.log(`Sum of every equal number is ${sum}`);
+
+console.log('');
+
+//2
+
+const height = 6;
+
+for(let i = 0; i <= height; i++){
+     if(i){
+          console.log('*'.repeat(i));  //WE REPEATING IN ADDITION TO height
+     }
+}
+
+console.log('');
+
+//3
+
+let value = 0;
+
+for(let i =1; i <=50; i++){
+     if(i % 3 === 0){
+          value++; //EVERY TIME WE INCREASE VALUE
+     }
+}
+console.log(value);
