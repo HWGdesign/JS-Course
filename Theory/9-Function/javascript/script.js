@@ -135,8 +135,8 @@ const showArguments = function () {
 
 showArguments("hello", 3, null, 23);
 
-//SUM EVERY NUMBER OF USER MONEY
-const addAllNumbers = function () {
+//SUM EVERY NUMBER OF USERS MONEY
+const addAllMoney = function () {
   let result = 0;
   for (let i = 0; i < arguments.length; i++) {
     result += arguments[i];
@@ -144,5 +144,154 @@ const addAllNumbers = function () {
   return result;
 };
 
-const usersMoney = addAllNumbers(10, 10, 10);
+const usersMoney = addAllMoney(10, 20, 30);
 console.log(usersMoney);
+
+console.log("");
+
+//DIFFERENT BEHAVIOR DEPENDS ON DATA
+
+function showInfoAboutUser(age, name, sex) {
+  if (arguments.length === 0) {
+    console.log("no info");
+  } else if (arguments.length === 1) {
+    console.log(`user is ${age} years old`);
+  } else if (arguments.length === 2) {
+    console.log(`user is ${age} years old, user name is ${name}`);
+  } else if (arguments.length === 3) {
+    console.log(
+      `user is ${age} years old, user name is ${name}, user sex is ${sex}`
+    );
+  }
+}
+
+console.log(showInfoAboutUser(12, "Kuba"));
+
+console.log("");
+
+//REST OPERATOR
+
+function showAllArguments(...items) {
+  //WHAT WE WANT TO STORE
+  console.log(arguments);
+  return items;
+}
+
+console.log(showAllArguments("12", 12, {}, true));
+
+console.log("");
+
+function addAllWords(...words) {
+  let txt = "";
+
+  //1
+  // let txt = "";
+  // for (let i = 0; i < words.length; i++) {
+  // txt += `${words[i] + " "}`;
+  // }
+  // return txt;
+
+  //2
+  // let txt = "";
+  // for (let i = 0; i < words.length; i++) {
+  // txt += words[i] + ' ';
+  // }
+  // return txt;
+
+  //3
+  //   words.forEach(function (word) {
+  //     txt += word + " ";
+  //   });
+
+  //4
+  words.forEach((word) => (txt += `${word} `));
+  return txt;
+}
+
+console.log(addAllWords("kuba", "ma", "kota"));
+
+function showPartySquad(owner, ...others) {
+  console.log(
+    `At the party was ${owner} 
+    ${others.length ? "and " + others + "." : "."}` //condition!
+  );
+}
+console.log(showPartySquad("Adrian", "efw", "ewf"));
+
+console.log("");
+
+//BASIC OBJECT
+
+const objectExample = {
+  name: "Kuba",
+  showName: function () {
+    console.log("Kuba2");
+  },
+  showAge: function () {
+    console.log(21);
+  },
+};
+
+objectExample.showAge();
+objectExample.showName();
+
+console.log("");
+
+//EXERCISE
+
+//1
+function calculateAverage(numbers) {
+  let sum = 0;
+
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+
+  return sum / numbers.length;
+}
+console.log(calculateAverage([1, 2, 3, 4]));
+
+console.log("");
+
+//2
+function filterEvenNumbers(evenNumber) {
+  let evenNumberList = [];
+  for (let i = 0; i < evenNumber.length; i++) {
+    if (evenNumber[i] % 2 === 0) {
+      evenNumberList.push(evenNumber[i]);
+    }
+  }
+  return evenNumberList;
+}
+console.log(filterEvenNumbers([1, 2, 3, 4, 5, 6]));
+
+console.log("");
+
+//3
+function countOccurrences(array, element) {
+  let score = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === element) {
+      score++;
+    }
+  }
+  return score;
+}
+
+console.log(
+  countOccurrences(
+    [
+      //THAT'S OUR ARRAY
+      "apple",
+      "banana",
+      "apple",
+      "orange",
+      "banana",
+      "banana",
+      "banana",
+      "banana",
+      "banana",
+    ],
+    "banana" //THAT'S OUR ELEMENT
+  )
+);
