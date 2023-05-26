@@ -1,0 +1,33 @@
+@import "./font";
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: rgb(17, 17, 17);
+  font-family: "Manrope", sans-serif;
+  height: 200dvh;
+}
+
+main {
+  padding-top: 1.5rem;
+}
+
+li:nth-child(3) {
+  cursor: pointer;
+}
+
+.newColor {
+  color: rgb(184, 233, 51);
+}
+
+.click {
+  color: rgb(34, 79, 226);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
