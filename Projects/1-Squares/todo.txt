@@ -1,0 +1,13 @@
+TODO:
+HTML:
+1.Make buttons
+
+CSS:
+
+1.style elements with css
+
+JS:
+1.Add listening to click
+2.Make function that adds button to html
+3.Make function that counts every button
+4.Make IF instruction 
