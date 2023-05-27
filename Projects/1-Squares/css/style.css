@@ -16,23 +16,61 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 2rem;
+}
+
+#buttonDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
   height: 5rem;
   width: 5rem;
   background-color: transparent;
-  outline: 2px dashed rgb(56, 54, 54);
-  color: rgb(56, 54, 54);
+  outline: 2px dashed rgb(25, 25, 35);
+  color: rgb(25, 25, 35);
   font-size: 0.85rem;
   border: none;
   transition: outline, 0.2s;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
+  margin: 2rem;
+  border-radius: 5rem;
 }
 
 button:hover {
-  outline: 2px dashed rgb(191, 190, 194);
+  outline: 2px dashed rgb(182, 184, 183);
   cursor: pointer;
+  color: rgb(182, 184, 183);
+  transform: rotate(-2deg);
+}
+
+button:active {
+  color: rgb(25, 25, 35);
+  outline: none;
+}
+
+#Elements {
+  outline: 2px solid rgb(242, 247, 247);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.square,
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(13, 61, 194);
+  color: rgb(255, 250, 255);
+  height: 3rem;
+  width: 3rem;
+  margin: 1rem;
+}
+
+.circle {
+  background-color: rgb(71, 149, 238);
+  color: rgb(255, 250, 255);
+  border-radius: 3rem;
 }/*# sourceMappingURL=style.css.map */
