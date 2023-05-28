@@ -1,15 +1,25 @@
-const buttonJS = document.getElementById("buttonJS");
-let number = 1;
+const div = document.createElement("div");
+const addClass = div.classList.add("line");
+document.body.appendChild(div);
+div.style.backgroundColor = "red";
+let size = 20;
+let growRect = true;
+div.style.height = size + `px`;
+div.style.width = 100 + `%`;
 
-const addElement = function () {
-  const ul = document.getElementById("numbersArea");
-  const li = document.createElement("li");
-  const addLi = ul.appendChild(li);
-  li.textContent = number;
-  if (number % 3 == 0) {
-    li.classList.add("bold");
+const scroll = window.addEventListener("scroll", function () {
+  if (size > this.window.innerHeight / 2) {
+    growRect = !growRect;
+  } else if (size <= 0) {
+    growRect = !growRect;
   }
-  number = number + 2;
-};
 
-buttonJS.addEventListener("click", addElement);
+  if (growRect) {
+    size += 10;
+    div.style.backgroundColor = "green";
+  } else {
+    size -= 10;
+    div.style.backgroundColor = "red";
+  }
+  div.style.height = size + `px`;
+});

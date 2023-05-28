@@ -13,3 +13,12 @@
 html {
   font-family: "Manrope", sans-serif;
 }
+
+body {
+  height: 120vh;
+}
+
+.square {
+  @include absoluteCenter;
+  background-color: rgb(159, 175, 175);
+}
