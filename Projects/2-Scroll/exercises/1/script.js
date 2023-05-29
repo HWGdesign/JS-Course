@@ -1,25 +1,23 @@
 const div = document.createElement("div");
-const addClass = div.classList.add("line");
-document.body.appendChild(div);
-div.style.backgroundColor = "red";
+const addWidth = (div.style.width = "100%");
+const addColor = (div.style.backgroundColor = "green");
 let size = 20;
-let growRect = true;
-div.style.height = size + `px`;
-div.style.width = 100 + `%`;
-
-const scroll = window.addEventListener("scroll", function () {
-  if (size > this.window.innerHeight / 2) {
-    growRect = !growRect;
+const addHeight = (div.style.height = `${size}px`);
+const addToHTML = document.body.appendChild(div);
+let condition = true;
+document.addEventListener("scroll", function () {
+  if (size > window.innerHeight / 1.5) {
+    condition = !condition;
   } else if (size <= 0) {
-    growRect = !growRect;
+    condition = !condition;
   }
 
-  if (growRect) {
+  if (condition) {
     size += 10;
-    div.style.backgroundColor = "green";
+    div.style.backgroundColor = "yellow";
   } else {
     size -= 10;
     div.style.backgroundColor = "red";
   }
-  div.style.height = size + `px`;
+  div.style.height = `${size}px`;
 });
