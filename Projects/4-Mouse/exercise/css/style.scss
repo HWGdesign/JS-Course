@@ -1,0 +1,19 @@
+//IMPORTS
+@import "./font";
+@import "./mixins";
+@import "./colors";
+
+*,
+::before,
+::after {
+  @include reset;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Manrope", sans-serif;
+}
+
+.center {
+  @include absoluteCenter;
+}
