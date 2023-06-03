@@ -1,0 +1,23 @@
+//IMPORTS
+@import "./font";
+@import "./mixins";
+@import "./colors";
+
+*,
+::before,
+::after {
+  @include reset;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Manrope", sans-serif;
+}
+
+.square {
+  position: fixed;
+  background-color: black;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+}
