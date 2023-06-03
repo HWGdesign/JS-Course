@@ -1,0 +1,25 @@
+//IMPORTS
+@import "./font";
+@import "./mixins";
+@import "./colors";
+
+*,
+::before,
+::after {
+  @include reset;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Manrope", sans-serif;
+  color-scheme: light dark;
+}
+
+#container {
+  @include absoluteCenter;
+}
+
+.active {
+  background-color: rgb(247, 246, 252);
+  color: rgb(37, 37, 37);
+}
