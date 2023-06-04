@@ -12,20 +12,26 @@ input.addEventListener("input", (e) => {
   //password - text, array content etc..., index - add number value
   document.addEventListener("keydown", (click) => {
     if (click.key == "Enter") {
+      document.querySelector(".message").classList.remove("correct");
+      document.querySelector(".message").classList.remove("correct");
       passwords.forEach((password, index) => {
-        //Example 1 (better)
         document.querySelector(".message").classList.remove("correct");
         document.querySelector(".message").classList.add("wrong");
+        //USER
         if (passwords[index - 1] == textLowerCase) {
           document.querySelector(".message").textContent = messages[index - 1];
           document.querySelector(".message").classList.remove("wrong");
           document.querySelector(".message").classList.add("correct");
           e.target.value = "";
-          //Example 2
+          //HWG
         } else if (passwords[index] == textLowerCase) {
           document.querySelector(".message").textContent = messages[index];
           document.querySelector(".message").classList.remove("wrong");
           document.querySelector(".message").classList.add("correct");
+          e.target.value = "";
+          //Empty
+        } else if (textLowerCase == "") {
+          document.querySelector(".message").textContent = "Password required!";
           e.target.value = "";
         } else {
           document.querySelector(".message").textContent = "Wrong password!";
