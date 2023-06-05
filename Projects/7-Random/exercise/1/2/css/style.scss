@@ -1,0 +1,52 @@
+//IMPORTS
+@import "./font";
+@import "./mixins";
+@import "./colors";
+
+*,
+::before,
+::after {
+  @include reset;
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+.container {
+  @include absoluteCenter;
+  display: grid;
+  grid-template-rows: 64px 1fr;
+  width: 400px;
+  height: auto;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 64px;
+  .input-js,
+  .button-js {
+    font-family: "Manrope", sans-serif;
+    margin: 1rem;
+    @include flexCenter;
+    height: 2rem;
+  }
+  .input-js {
+    width: 15rem;
+    padding-left: 1rem;
+  }
+  .button-js {
+    width: 2rem;
+    cursor: pointer;
+  }
+}
+
+.bottom {
+  @include flexLeft;
+  margin-left: 2rem;
+  li {
+    list-style-type: none;
+  }
+}

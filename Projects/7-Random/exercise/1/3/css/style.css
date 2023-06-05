@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  width: 300px;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr 50px 50px;
+  height: 50px;
+}
+.top .first,
+.top .second,
+.top .third {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.top .first input {
+  padding-left: 10px;
+}
+.top .first input,
+.top .second button,
+.top .third button {
+  width: 100%;
+  height: 100%;
+}
+.top .second button,
+.top .third button {
+  cursor: pointer;
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 50px;
+}
+.bottom .fourth,
+.bottom .fifth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.bottom .fourth button,
+.bottom .fifth button {
+  width: 100%;
+  height: 30px;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
