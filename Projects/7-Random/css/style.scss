@@ -1,0 +1,27 @@
+//IMPORTS
+@import "./font";
+@import "./mixins";
+@import "./colors";
+
+*,
+::before,
+::after {
+  @include reset;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Manrope", sans-serif;
+  color-scheme: light dark;
+}
+
+#container {
+  @include absoluteCenter;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  height: 100px;
+}
+
+.button {
+  @include flexCenter;
+}
