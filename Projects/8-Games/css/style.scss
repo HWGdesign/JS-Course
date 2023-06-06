@@ -11,9 +11,20 @@
   box-sizing: border-box;
 }
 
+span {
+  color: rgb(99, 99, 99);
+  font-weight: 600;
+}
+
 html {
   font-family: "Manrope", sans-serif;
   color-scheme: light dark;
+}
+
+img {
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
 }
 
 h1 {
@@ -48,7 +59,7 @@ h3 {
     @include flexCenter;
     width: 150px;
     height: 150px;
-    background-color: rgb(49, 49, 49);
+    background-color: rgb(99, 99, 99);
     margin: 25px;
     border-radius: 10px;
   }
@@ -81,4 +92,17 @@ h3 {
     grid-template-rows: repeat(4 1fr);
     height: 100px;
   }
+}
+
+.wins {
+  color: rgb(17, 156, 17);
+}
+.draws {
+  color: rgb(132, 221, 15);
+}
+.loses {
+  color: rgb(226, 43, 43);
+}
+.games {
+  color: rgb(99, 99, 99);
 }

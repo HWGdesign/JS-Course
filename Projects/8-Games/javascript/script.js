@@ -36,96 +36,90 @@ const computerMove = function () {
   }
 };
 
-//Rock
+//! Rock
 rockPicked = () => {
   userMoveID = 1;
   computerMove();
+
   if (userMoveID == computerMoveID) {
     //ROCK id 1
-    document.querySelector(".yourChoice").textContent = `Your choice: Rock`;
-    document.querySelector(".computerChoice").textContent = `PC choice: Rock`;
-    document.querySelector(".gameResult").textContent = `Result: Draw`;
-    document.querySelector(".draws").textContent = `Draws: ${++draws}`;
+    document.querySelector(".yourChoice").textContent = `Rock`;
+    document.querySelector(".computerChoice").textContent = `Rock`;
+    document.querySelector(".gameResult").textContent = `Draw`;
+    document.querySelector(".draws").textContent = `${++draws}`;
   } else if (computerMoveID == 2) {
     //PAPER id 2
-    document.querySelector(".yourChoice").textContent = `Your choice: Rock`;
-    document.querySelector(".computerChoice").textContent = `PC choice: Paper`;
-    document.querySelector(".gameResult").textContent = `Result: You lost`;
-    document.querySelector(".loses").textContent = `Loses: ${++loses}`;
-
-    console.log("PC: paper");
+    document.querySelector(".yourChoice").textContent = `Rock`;
+    document.querySelector(".computerChoice").textContent = `Paper`;
+    document.querySelector(".gameResult").textContent = `Lost`;
+    document.querySelector(".loses").textContent = `${++loses}`;
   } else if (computerMoveID == 3) {
     //SCISSORS id 3
-    document.querySelector(".yourChoice").textContent = `Your choice: Rock`;
-    document.querySelector(
-      ".computerChoice"
-    ).textContent = `PC choice: Scissors`;
-    document.querySelector(".gameResult").textContent = `Result: You won`;
-    document.querySelector(".wins").textContent = `Wins: ${++wins}`;
+    document.querySelector(".yourChoice").textContent = `Rock`;
+    document.querySelector(".computerChoice").textContent = `Scissors`;
+    document.querySelector(".gameResult").textContent = `Win`;
+    document.querySelector(".wins").textContent = `${++wins}`;
   }
-  document.querySelector(
-    ".games"
-  ).textContent = `Games played: ${++gamesPlayed}`;
+  //Other
+
+  document.querySelector(".games").textContent = ` ${++gamesPlayed}`;
 };
-//Paper
+//! Paper
 paperPicked = () => {
   userMoveID = 2;
   computerMove();
 
   if (computerMoveID == 1) {
     //ROCK id 1
-    document.querySelector(".yourChoice").textContent = `Your choice: Paper`;
-    document.querySelector(".computerChoice").textContent = `PC choice: Rock`;
-    document.querySelector(".gameResult").textContent = `Result: You won`;
-    document.querySelector(".wins").textContent = `Wins: ${++wins}`;
+    document.querySelector(".yourChoice").textContent = `Paper`;
+    document.querySelector(".computerChoice").textContent = `Rock`;
+    document.querySelector(".gameResult").textContent = `Win`;
+    document.querySelector(".wins").textContent = `${++wins}`;
   } else if (computerMoveID == userMoveID) {
     //PAPER id 2
-    document.querySelector(".yourChoice").textContent = `Your choice: Paper`;
-    document.querySelector(".computerChoice").textContent = `PC choice: Paper`;
-    document.querySelector(".gameResult").textContent = `Result: Draw`;
-    document.querySelector(".draws").textContent = `Draws: ${++draws}`;
+    document.querySelector(".yourChoice").textContent = `Paper`;
+    document.querySelector(".computerChoice").textContent = `Paper`;
+    document.querySelector(".gameResult").textContent = `Draw`;
+    document.querySelector(".draws").textContent = `${++draws}`;
+
     //SCISSORS id 3
   } else if (computerMoveID == 3) {
-    document.querySelector(".yourChoice").textContent = `Your choice: Paper`;
-    document.querySelector(
-      ".computerChoice"
-    ).textContent = `PC choice: Scissors`;
-    document.querySelector(".gameResult").textContent = `Result: You lost`;
-    document.querySelector(".loses").textContent = `Loses: ${++loses}`;
+    document.querySelector(".yourChoice").textContent = `Paper`;
+    document.querySelector(".computerChoice").textContent = `Scissors`;
+    document.querySelector(".gameResult").textContent = `Lost`;
+    document.querySelector(".loses").textContent = `${++loses}`;
   }
-  document.querySelector(
-    ".games"
-  ).textContent = `Games played: ${++gamesPlayed}`;
+
+  document.querySelector(".games").textContent = ` ${++gamesPlayed}`;
 };
 
-//Scissors
+//! Scissors
 scissorsPicked = () => {
   userMoveID = 3;
   computerMove();
+
   if (computerMoveID == 1) {
     //ROCK id 1
-    document.querySelector(".yourChoice").textContent = `Your choice: Scissors`;
-    document.querySelector(".computerChoice").textContent = `PC choice: Rock`;
-    document.querySelector(".gameResult").textContent = `Result: You lost`;
-    document.querySelector(".loses").textContent = `Loses: ${++loses}`;
+    document.querySelector(".yourChoice").textContent = `Scissors`;
+    document.querySelector(".computerChoice").textContent = `Rock`;
+    document.querySelector(".gameResult").textContent = `Lost`;
+    document.querySelector(".loses").textContent = `${++loses}`;
     //PAPER id 2
   } else if (computerMoveID == 2) {
-    document.querySelector(".yourChoice").textContent = `Your choice: Scissors`;
-    document.querySelector(".computerChoice").textContent = `PC choice: Paper`;
-    document.querySelector(".gameResult").textContent = `Result: You win`;
-    document.querySelector(".wins").textContent = `Wins: ${++wins}`;
+    document.querySelector(".yourChoice").textContent = `Scissors`;
+    document.querySelector(".computerChoice").textContent = `Paper`;
+    document.querySelector(".gameResult").textContent = `Win`;
+    document.querySelector(".gameResult").classList;
+    document.querySelector(".wins").textContent = `${++wins}`;
   } else if (computerMoveID == userMoveID) {
     //SCISSORS id 3
-    document.querySelector(".yourChoice").textContent = `Your choice: Scissors`;
-    document.querySelector(
-      ".computerChoice"
-    ).textContent = `PC choice: Scissors`;
-    document.querySelector(".gameResult").textContent = `Result: Draw`;
-    document.querySelector(".draws").textContent = `Draws: ${++draws}`;
+    document.querySelector(".yourChoice").textContent = `Scissors`;
+    document.querySelector(".computerChoice").textContent = `Scissors`;
+    document.querySelector(".gameResult").textContent = `Draw`;
+    document.querySelector(".draws").textContent = `${++draws}`;
   }
-  document.querySelector(
-    ".games"
-  ).textContent = `Games played: ${++gamesPlayed}`;
+
+  document.querySelector(".games").textContent = `${++gamesPlayed}`;
 };
 
 //Listening
