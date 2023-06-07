@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  font-family: "Work Sans", sans-serif;
+  max-width: 80%;
+  margin: 20px auto;
+  letter-spacing: 0.5px;
+}
+
+.cursor {
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.cursor.active {
+  opacity: 1;
+}/*# sourceMappingURL=style.css.map */
