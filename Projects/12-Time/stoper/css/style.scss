@@ -1,0 +1,47 @@
+//IMPORTS
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+@import "./font";
+@import "./mixins";
+@import "./colors";
+
+*,
+::before,
+::after {
+  @include reset;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Manrope", sans-serif;
+  color-scheme: light dark;
+}
+
+.container {
+  @include absoluteCenter;
+  display: grid;
+  grid-template-rows: 50px 50px;
+  width: 300px;
+  .buttons {
+    @include flexCenter;
+    gap: 30px;
+  }
+  button {
+    font-family: "Manrope", sans-serif;
+    width: 60px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: gray;
+  }
+  button:hover {
+    cursor: pointer;
+    background-color: lightgray;
+    color: gray;
+  }
+  .timer {
+    @include flexCenter;
+    width: 100%;
+  }
+}
