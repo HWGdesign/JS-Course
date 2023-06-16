@@ -1,43 +1,64 @@
 const input = document.querySelector(".inputJS");
-const btnAdd = document.querySelector(".addJS");
-const btnRes = document.querySelector(".resJS");
-const tasks = document.querySelector(".taskList");
-const counter = document.querySelector(".count");
-const btnDel = document.querySelector(".delete");
+const add = document.querySelector(".addJS");
+const reset = document.querySelector(".resetJS");
+const tasks = document.querySelector(".tasks");
+const task = document.querySelectorAll("task");
+const taskIndex = document.querySelector(".index");
+const errors = document.querySelector(".error");
+
+const toDoList = [];
 let index = 0;
 
-let taskArr = [];
+const delItem = (e) => {
+  --index;
+  e.target.parentNode.remove();
+  const number = e.target.parentNode.dataset.number;
+  console.log(number);
+  toDoList.splice(number, 1);
+  console.log(toDoList);
 
-const addTask = () => {
+  taskIndex.textContent = index;
+  input.value = "";
+};
+
+const addItem = () => {
   if (input.value != "") {
-    if (input.value != taskArr[index]) {
-      const li = document.createElement("li");
-      li.innerHTML = taskArr[index];
-      tasks.appendChild(li);
-
-      li.className = "task";
-      li.innerHTML = input.value + `<button>Del</button>`;
-
-      taskArr.push(input.value);
-
-      counter.textContent = ` ${index}`;
-      console.log(taskArr);
-
-      input.value = "";
-      index++;
-    } else {
+    if (toDoList.includes(input.value)) {
+      alert("Task already exists");
       return;
+    } else {
+      toDoList.push(input.value);
+      console.log(toDoList);
+      const li = document.createElement("li");
+      li.innerHTML = toDoList[index] + `<button>  X </button>`;
+
+      toDoList.forEach(() => {
+        tasks.appendChild(li);
+      });
+
+      li.querySelector("button").addEventListener("click", delItem);
+      li.dataset.number = index;
+      tasks.appendChild(li);
+      index++;
+      //add index
+      taskIndex.textContent = index;
+      input.value = "";
     }
   }
+  //Add item to toDoList
 };
 
-const resTask = () => {
-  input.value = "";
-  taskArr = [];
+const resetItems = () => {
+  //reset toDoList []
+  toDoList.length = 0;
+  console.log(toDoList);
+  //reset tasks
   tasks.textContent = "";
+  //reset index
   index = 0;
-  console.log(taskArr);
+  taskIndex.textContent = index;
+  input.value = "";
 };
 
-btnAdd.addEventListener("click", addTask);
-btnRes.addEventListener("click", resTask);
+add.addEventListener("click", addItem);
+reset.addEventListener("click", resetItems);
