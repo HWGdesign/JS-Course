@@ -129,3 +129,125 @@ const obj = {
 };
 
 obj.showName();
+
+//call
+// const humanPesel = {
+//   pesel: 22231214,
+// };
+
+// const showPesel = function () {
+//   console.log(`your pesel is ${this.pesel}`);
+// };
+
+// showPesel.call(humanPesel);
+
+//2
+
+//that = this
+// const animals = {
+//   names: ['dog1', 'dog2'],
+//   showName: function () {
+//     const that = this;
+//     this.names.forEach(function (name, index) {
+//       console.log(that.names[index]);
+//     });
+//   },
+// };
+// animals.showName();
+
+//arrow function
+// const animals = {
+//   names: ['dog1', 'dog2'],
+//   showName: function () {
+//     this.names.forEach((name, index) => {
+//       console.log(this.names[index]);
+//     });
+//   },
+// };
+// animals.showName();
+
+//bind
+//1
+const humanPesel = {
+  pesel: 22231214,
+};
+
+const showPesel = function () {
+  console.log(`your pesel is ${this.pesel}`);
+};
+
+const showPeselUser = showPesel.bind(humanPesel);
+showPeselUser();
+
+//2
+// const animals = {
+//   names: ['dog1', 'dog2'],
+//   showName: function () {
+//     this.names.forEach(
+//       function (name, index) {
+//         console.log(this.names[index]);
+//       }.bind(this)
+//     );
+//   },
+// };
+// animals.showName();
+
+//for of
+
+const animals = {
+  names: ['dog1', 'dog2'],
+  showName: function () {
+    for (const nameAnimal of this.names) {
+      console.log(nameAnimal);
+    }
+  },
+};
+animals.showName();
+
+class Dog {
+  constructor(name, color) {
+    this.name = name;
+    let _color = color;
+    this.getColor = () => {
+      return color;
+    };
+    this.setColor = (color) => {
+      _color = color;
+    };
+  }
+}
+
+const Scooby = new Dog('Scooby', 'brown');
+
+class myCar {
+  constructor(name, year, counter) {
+    this.name = name;
+
+    let _counter = counter;
+    let _year = year;
+
+    this.setCounter = function (value) {
+      return (_counter = value);
+    };
+    this.getYear = () => _year;
+  }
+}
+const polonez = new myCar('polonez', 2010, 201223);
+console.log(polonez);
+
+class PersonTwo {
+  #firstName;
+  #lastName;
+  constructor(firstName, lastName) {
+    this.#firstName = firstName;
+    this.#lastName = lastName;
+  }
+
+  fullName() {
+    return `${this.#firstName} ${this.#lastName}`;
+  }
+}
+
+const JohnDoe = new PersonTwo('John', 'Doe');
+
+console.log(JohnDoe.fullName());
