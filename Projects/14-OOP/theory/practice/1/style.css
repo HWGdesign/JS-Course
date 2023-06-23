@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+}
+
+button{
+    width: 5rem;
+    height: 2rem;
+    border: none;
+    background-color: skyblue;
+    color:white;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.squares{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    row-gap: 1rem;
+    margin: 1rem;
+}
+
+.square{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 0.25rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: darkcyan;
+}
