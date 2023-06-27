@@ -2,7 +2,6 @@
 @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css');
 @import './font';
 @import './mixins';
-@import './colors';
 
 *,
 ::before,
@@ -10,15 +9,16 @@
   @include reset;
   box-sizing: border-box;
   font-family: Manrope;
-  color: $dark;
+  color: black;
 }
 
 .center {
   @include absoluteCenter;
-  border-radius: 1rem;
-  padding: 3rem 1rem;
+  border-radius: 0.75rem;
+  padding: 2rem 1rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   height: auto;
+  width: 350px;
 }
 
 .top,
@@ -30,18 +30,19 @@
 .mid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: auto;
   .option {
     border-radius: 0.5rem;
     width: 100px;
     height: 100px;
-    background-color: $grey;
+    border: 1px solid lightgrey;
   }
 }
 
 .bottom {
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 1fr 100px;
+  gap: auto;
   input,
   button {
     caret-color: transparent;
@@ -49,39 +50,41 @@
     border-radius: 0.5rem;
     padding-inline: 2rem;
     height: 50px;
-    border: 1px solid $grey;
-    text-align: center;
+    border: 1px solid lightgrey;
     transition: background-color;
   }
+  input {
+    padding-left: 50px;
+    width: 200px;
+  }
   button {
-    color: $white;
-    background-color: $grey;
+    color: white;
+    background-color: lightgrey;
   }
   button:hover {
     cursor: pointer;
-    background-color: $grey-hover;
+    background-color: grey;
     transition: background-color 0.3s;
   }
+}
+
+.input {
+  position: relative;
+}
+
+.dollar {
+  font-style: 600;
+  font-size: 1.015rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include flexCenter;
+  width: 50px;
+  height: 50px;
 }
 
 .info {
   display: grid;
   grid-template-rows: repeat(auto, 1fr);
   gap: 10px;
-  .error {
-    @include flexCenter;
-    color: $red;
-  }
-}
-
-.green {
-  background-color: $green;
-}
-
-.blue {
-  background-color: $blue;
-}
-
-.red {
-  background-color: $red;
 }
